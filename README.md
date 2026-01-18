@@ -53,9 +53,6 @@ A modern, fully responsive portfolio website template built with pure HTML, CSS,
 ### Mobile View
 ![Mobile Preview](preview/mobile.png)
 
-### Table View
-![Tablet Preview](preview/tablet.png)
-
 ## 📂 Project Structure
 
 ```
