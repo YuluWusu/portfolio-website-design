@@ -48,10 +48,10 @@ A modern, fully responsive portfolio website template built with pure HTML, CSS,
 ## 🖼️ Preview
 
 ### Desktop View
-![Desktop Preview](preview/desktop.png)
+![Desktop Preview](preview/desktop.PNG)
 
 ### Mobile View
-![Mobile Preview](preview/mobile.png)
+![Mobile Preview](preview/mobile.PNG)
 
 ## 📂 Project Structure
 
