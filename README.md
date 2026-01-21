@@ -86,7 +86,7 @@ portfolio-template/
 1. **Fork** this repository
 2. **Clone** your fork:
    ```bash
-   git clone https://github.com/yuluwusu/portfolio-template.git
+   git clone https://github.com/YuluWusu/portfolio-website-design
    ```
 3. **Open** `index.html` in your browser
 
@@ -259,9 +259,9 @@ Want to be featured? Share your customized version:
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/YuluWusu/portfolio-template/issues)
+- **Issues**: [GitHub Issues](https://github.com/YuluWusu/portfolio-website-design/issue)
 - **Email**: yuluwusu@gmail.com
-- **Documentation**: [Wiki](https://github.com/YuluWusu/portfolio-template/wiki)
+- **Documentation**: [Wiki](https://github.com/YuluWusu/portfolio-website-design/wiki)
 
 ---
 
