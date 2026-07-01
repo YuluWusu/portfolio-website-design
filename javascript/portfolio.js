@@ -116,4 +116,62 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo(0, 0);
         }, 100);
     });
+
+    // Modal Logic
+    const contactModal = document.getElementById('contactModal');
+    const cvModal = document.getElementById('cvModal');
+    const closeContactModal = document.getElementById('closeContactModal');
+    const closeCvModal = document.getElementById('closeCvModal');
+    const serviceSelect = document.getElementById('service');
+    
+    // Open Contact Modal
+    document.querySelectorAll('.btn-contact-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.classList.add('active');
+            if(serviceSelect) serviceSelect.value = 'Liên hệ chung';
+        });
+    });
+
+    // Open Registration Modal with specific service
+    document.querySelectorAll('.btn-register-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const serviceName = this.getAttribute('data-service');
+            if (serviceName && serviceSelect) {
+                const optionExists = Array.from(serviceSelect.options).some(opt => opt.value === serviceName);
+                if(optionExists) {
+                    serviceSelect.value = serviceName;
+                }
+            }
+            contactModal.classList.add('active');
+        });
+    });
+
+    // Open CV Modal
+    const btnViewCv = document.querySelector('.btn-view-cv');
+    if (btnViewCv) {
+        btnViewCv.addEventListener('click', function(e) {
+            e.preventDefault();
+            cvModal.classList.add('active');
+        });
+    }
+
+    // Close Modals
+    if (closeContactModal) {
+        closeContactModal.addEventListener('click', () => contactModal.classList.remove('active'));
+    }
+    
+    if (closeCvModal) {
+        closeCvModal.addEventListener('click', () => cvModal.classList.remove('active'));
+    }
+
+    // Close on clicking outside
+    document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    });
 });

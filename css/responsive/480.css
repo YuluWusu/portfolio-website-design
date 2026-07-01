@@ -1,0 +1,166 @@
+/* ============================================
+   480px - MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 480px) {
+    /* Global */
+    html {
+        font-size: 50%;
+    }
+    
+    body {
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+    
+    /* Header */
+    header {
+        padding: 1.5rem 5%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 10rem 15px 3rem !important;
+        min-height: auto !important;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .section-education {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        min-height: auto;
+    }
+    
+    h2 {
+        font-size: 3.5rem;
+    }
+    
+    /* Home Section */
+    .home {
+        padding-top: 8rem !important;
+    }
+    
+    .home-content {
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .home-text {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .home-text h1 {
+        font-size: 3.5rem !important;
+        line-height: 1.2;
+    }
+    
+    .typing-text {
+        font-size: 2.5rem !important;
+    }
+    
+    .social-icons a {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.6rem;
+    }
+    
+    .contact-info {
+        justify-content: center;
+    }
+    
+    /* Education Section */
+    .education {
+        padding: 3rem 0 !important;
+    }
+    
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .contact-item,
+    .language-item span {
+        font-size: 1.3rem;
+    }
+    
+    .info-label {
+        font-size: 1.2rem;
+    }
+    
+    .info-value {
+        font-size: 1.4rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .course-score {
+        align-self: flex-end;
+    }
+    
+    .scholarship-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .scholar-icon {
+        margin: 0 auto;
+    }
+    
+    /* Achievement Section */
+    .box {
+        border-radius: 15px;
+    }
+    
+    .box-content {
+        padding: 1.8rem;
+    }
+    
+    .title-name {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+    }
+    
+    .title-name::before {
+        width: 3px;
+        height: 1.8rem;
+    }
+    
+    /* Services Section */
+    .service-features {
+        gap: 0.8rem;
+    }
+    
+    .feature-tag {
+        font-size: 1.3rem;
+        padding: 0.4rem 1rem;
+    }
+}
