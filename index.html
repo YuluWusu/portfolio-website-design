@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/achievement.css">
     <link rel="stylesheet" href="../css/education.css">
     <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/modal.css">
 
     <link rel="stylesheet" href="../css/responsive/992.css">
     <link rel="stylesheet" href="../css/responsive/768.css">
@@ -73,7 +74,11 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
-                        <a href="#contact" class="btn">Liên hệ tôi</a>
+                        <div class="action-buttons" style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                            <button class="btn btn-contact-modal">Liên hệ tôi</button>
+                            <button class="btn btn-view-cv" style="background: transparent; border: 2px solid #00f2fe; color: #00f2fe;">Xem CV</button>
+                            <a href="../CV.pdf" download="PhiLong_CV.pdf" class="btn btn-download-cv" style="background: transparent; border: 2px solid #00f2fe; color: #00f2fe;"><i class="fas fa-download"></i> Tải CV</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,8 +116,8 @@
                                 <i class="fas fa-user-check"></i> Còn slot
                             </div>
                             <div class="service-actions">
-                                <a href="#register" class="btn-register">Đăng ký học</a>
-                                <a href="#trial" class="btn-contact">Học thử miễn phí</a>
+                                <button class="btn-register btn-register-modal" data-service="Gia Sư Tiếng Anh">Đăng ký học</button>
+                                <button class="btn-contact btn-register-modal" data-service="Gia Sư Tiếng Anh (Học thử)">Học thử miễn phí</button>
                             </div>
                         </div>
                     </div>
@@ -138,8 +143,8 @@
                                 <i class="fas fa-heartbeat"></i> Active
                             </div>
                             <div class="service-actions">
-                                <a href="#contact" class="btn-register">Đăng ký ngay</a>
-                                <a href="#contact" class="btn-contact">Liên hệ tư vấn</a>
+                                <button class="btn-register btn-register-modal" data-service="Gia Sư CNTT">Đăng ký ngay</button>
+                                <button class="btn-contact btn-contact-modal">Liên hệ tư vấn</button>
                             </div>
                         </div>
                     </div>
@@ -165,8 +170,8 @@
                                 <i class="fas fa-heartbeat"></i> Active
                             </div>
                             <div class="service-actions">
-                                <a href="#contact" class="btn-register">Đăng ký tập</a>
-                                <a href="#contact" class="btn-contact">Tư vấn lộ trình</a>
+                                <button class="btn-register btn-register-modal" data-service="PT Calisthenics">Đăng ký tập</button>
+                                <button class="btn-contact btn-contact-modal">Tư vấn lộ trình</button>
                             </div>
                         </div>
                     </div>
@@ -188,7 +193,7 @@
                         <div class="service-meta">
                             <div class="service-price price-contact">Liên hệ báo giá</div>
                             <div class="service-actions">
-                                <a href="#contact" class="btn-contact btn-contact-yellow-alt">Liên hệ</a>
+                                <button class="btn-contact btn-contact-yellow-alt btn-contact-modal">Liên hệ</button>
                             </div>
                         </div>
                     </div>
@@ -210,7 +215,7 @@
                         <div class="service-meta">
                             <div class="service-price price-contact">Liên hệ báo giá</div>
                             <div class="service-actions">
-                                <a href="#contact" class="btn-contact btn-contact-yellow-alt">Liên hệ</a>
+                                <button class="btn-contact btn-contact-yellow-alt btn-contact-modal">Liên hệ</button>
                             </div>
                         </div>
                     </div>
@@ -236,7 +241,7 @@
                                     nhận</span>
                             </div>
                             <div class="service-actions">
-                                <a href="#contact" class="btn-register-paused">Nhận thông báo</a>
+                                <button class="btn-register-paused btn-contact-modal">Nhận thông báo</button>
                                 <a href="#portfolio" class="btn-contact-paused">Xem mẫu thiết kế</a>
                             </div>
                         </div>
@@ -692,6 +697,65 @@
             </div>
         </section>
     </main>
+
+    <!-- Contact / Registration Modal -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeContactModal">&times;</button>
+            <div class="modal-form">
+                <h2>Liên hệ / Đăng ký</h2>
+                <form action="https://api.web3forms.com/submit" method="POST" id="web3form">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    
+                    <div class="form-group">
+                        <label for="name">Họ và tên *</label>
+                        <input type="text" id="name" name="name" required placeholder="Nhập họ và tên của bạn">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Nhập số điện thoại">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Dịch vụ quan tâm</label>
+                        <select id="service" name="service">
+                            <option value="Liên hệ chung">Liên hệ chung</option>
+                            <option value="Gia Sư Tiếng Anh">Gia Sư Tiếng Anh</option>
+                            <option value="Gia Sư Tiếng Anh (Học thử)">Gia Sư Tiếng Anh (Học thử)</option>
+                            <option value="Gia Sư CNTT">Gia Sư CNTT</option>
+                            <option value="PT Calisthenics">PT Calisthenics</option>
+                            <option value="Dịch vụ khác">Khác...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Lời nhắn</label>
+                        <textarea id="message" name="message" placeholder="Nhập nội dung lời nhắn..."></textarea>
+                    </div>
+                    
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" class="submit-btn">Gửi thông tin</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal-overlay">
+        <div class="modal-content large">
+            <button class="modal-close" id="closeCvModal">&times;</button>
+            <div class="modal-form">
+                <h2>Hồ sơ năng lực (CV)</h2>
+            </div>
+            <div class="cv-iframe-container">
+                <iframe src="../CV.pdf" title="CV Phi Long"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="../javascript/portfolio.js"></script>
     <script src="../javascript/responsive.js"></script>
