@@ -270,12 +270,3 @@ Want to be featured? Share your customized version:
 *Happy coding! Build something amazing!* 🚀
 
 ---
-
-## 🔗 Quick Links
-
-- [Live Demo](#) *(Add your live URL here)*
-- [Documentation](docs/) *(If you create documentation)*
-- [Changelog](CHANGELOG.md) *(Track changes)*
-- [Contributing Guide](CONTRIBUTING.md) *(How to contribute)*
-- [Code of Conduct](CODE_OF_CONDUCT.md) *(Community guidelines)*
-
